@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林一诺 | Portfolio</title>
+<style>
+:root{--bg:#f7f7f4;--ink:#171717;--muted:#777;--line:#dddcd6;--card:#fff;--accent:#263b32}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.7}
+header{position:fixed;top:0;left:0;right:0;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:rgba(247,247,244,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:10}
+.logo{font-weight:700;letter-spacing:2px} nav{display:flex;gap:25px} nav button,.lang button{border:0;background:none;cursor:pointer;color:#666;font-size:13px} nav button.active,nav button:hover,.lang button.active{color:var(--ink);font-weight:700}.lang{display:flex;gap:7px}
+main{padding-top:70px}.page{display:none;min-height:calc(100vh - 70px);padding:90px 8vw}.page.active{display:block;animation:in .45s ease}@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:8vw}.eyebrow{font-size:12px;letter-spacing:3px;color:var(--muted);margin-bottom:22px}.hero h1{font-size:clamp(70px,10vw,150px);line-height:.9;letter-spacing:-7px;margin:0 0 28px}.hero h2{font-size:20px;font-weight:400;margin:0 0 24px}.hero p{max-width:650px;color:#5e5e5e;font-size:16px}.portrait{aspect-ratio:4/5;background:#dcdcd5;display:flex;align-items:center;justify-content:center;color:#888;letter-spacing:2px}
+.section-head{margin-bottom:55px}.num{font-size:12px;color:#999;letter-spacing:2px}.section-head h1{font-size:54px;letter-spacing:-2px;margin:8px 0}.section-head p{max-width:700px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.card{background:var(--card);border:1px solid var(--line);padding:30px}.card h2{margin:0 0 10px;font-size:24px}.card p,.card li{color:#666;font-size:14px}.card ul{padding-left:20px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px}.about p{font-size:17px;color:#555}.facts{border-top:1px solid var(--line)}.fact{display:grid;grid-template-columns:120px 1fr;padding:18px 0;border-bottom:1px solid var(--line)}.fact span:first-child{color:#999;font-size:13px}
+.timeline{border-left:1px solid #bbb}.item{position:relative;padding:0 0 55px 45px}.item:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--accent)}.date{font-size:12px;color:#999;letter-spacing:1px}.item h2{margin:8px 0}.item p{color:#666;margin:6px 0;font-size:14px}
+.project{overflow:hidden}.project .tag{font-size:11px;letter-spacing:2px;color:#999}.project h2{font-size:25px}.project p{margin-bottom:0}.metric{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-size:13px;color:#555}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.skill{border-top:1px solid var(--line);padding:20px 0}.skill h3{margin:0 0 8px}.skill p{margin:0;color:#666;font-size:14px}
+.contact{min-height:65vh;display:flex;flex-direction:column;justify-content:center}.contact h1{font-size:clamp(60px,9vw,120px);line-height:.9;letter-spacing:-5px;margin:10px 0 35px}.contact p{max-width:650px;color:#666}.contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink)}
+footer{padding:28px 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#999;font-size:12px}
+@media(max-width:800px){header{height:auto;padding:16px 5vw;flex-wrap:wrap;gap:12px}nav{order:3;width:100%;overflow:auto;gap:18px}.page{padding:65px 6vw}.hero,.about,.grid{grid-template-columns:1fr}.hero h1{font-size:75px}.skills{grid-template-columns:1fr}.section-head h1{font-size:43px}footer{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">YINUO LIN</div>
+  <nav>
+    <button class="active" onclick="show('home')" data-zh="首页" data-en="Home">首页</button>
+    <button onclick="show('about')" data-zh="关于我" data-en="About">关于我</button>
+    <button onclick="show('education')" data-zh="教育经历" data-en="Education">教育经历</button>
+    <button onclick="show('projects')" data-zh="项目经历" data-en="Projects">项目经历</button>
+    <button onclick="show('skills')" data-zh="能力" data-en="Skills">能力</button>
+    <button onclick="show('contact')" data-zh="联系我" data-en="Contact">联系我</button>
+  </nav>
+  <div class="lang"><button class="active" onclick="lang('zh')" id="zh">中</button><span>/</span><button onclick="lang('en')" id="en">EN</button></div>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">PERSONAL PORTFOLIO · 2026</div>
+      <h1>林一诺</h1>
+      <h2 data-zh="上海交通大学 · 德语 · 本科" data-en="German Studies · Shanghai Jiao Tong University">上海交通大学 · 德语 · 本科</h2>
+      <p data-zh="一名关注语言、人工智能与用户需求的德语专业学生。拥有英德双语能力，正在探索如何把语言能力、数据分析与生成式 AI 应用结合到真实项目中。"
+         data-en="A German Studies undergraduate interested in language, AI, and user needs. I explore how bilingual communication, data analysis, and generative AI can work together in real-world projects.">
+         一名关注语言、人工智能与用户需求的德语专业学生。拥有英德双语能力，正在探索如何把语言能力、数据分析与生成式 AI 应用结合到真实项目中。
+      </p>
+    </div>
+    <div class="portrait">PORTRAIT / IMAGE</div>
+  </div>
+</section>
+
+<section id="about" class="page">
+  <div class="section-head"><div class="num">01</div><h1 data-zh="关于我" data-en="About Me">关于我</h1>
+  <p data-zh="从语言学习出发，持续向 AI、数据与用户研究延伸。" data-en="Starting from language studies, I keep exploring AI, data, and user research.">从语言学习出发，持续向 AI、数据与用户研究延伸。</p></div>
+  <div class="about">
+    <div><p data-zh="我就读于上海交通大学德语专业，具备英语与德语语言能力，并持续关注人工智能工具在语言学习、数据标注、内容处理和用户运营中的实际应用。我的项目经历覆盖文本情感分析、生成式 AI 辅助数据标注、用户访谈与需求分析，以及课程与 FAQ 的设计。"
+      data-en="I study German at Shanghai Jiao Tong University, with English and German language skills and a strong interest in practical AI applications in language learning, data annotation, content processing, and user operations. My projects include sentiment analysis, generative-AI-assisted annotation, user interviews, needs analysis, and educational content design.">
+      我就读于上海交通大学德语专业，具备英语与德语语言能力，并持续关注人工智能工具在语言学习、数据标注、内容处理和用户运营中的实际应用。我的项目经历覆盖文本情感分析、生成式 AI 辅助数据标注、用户访谈与需求分析，以及课程与 FAQ 的设计。
+    </p></div>
+    <div class="facts">
+      <div class="fact"><span>姓名</span><span>林一诺</span></div>
+      <div class="fact"><span>学校</span><span>上海交通大学</span></div>
+      <div class="fact"><span>专业</span><span>德语</span></div>
+      <div class="fact"><span>学历</span><span>本科</span></div>
+      <div class="fact"><span>在读时间</span><span>2025.09 — 2029.06</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="page">
+  <div class="section-head"><div class="num">02</div><h1 data-zh="教育经历" data-en="Education">教育经历</h1></div>
+  <div class="timeline">
+    <div class="item"><div class="date">2025.09 — 2029.06</div><h2>上海交通大学</h2><p data-zh="德语 · 本科" data-en="German Studies · Undergraduate">德语 · 本科</p><p data-zh="德语专业课排名 12/23；持续学习语言、语料分析与 AI 相关方法。" data-en="Ranked 12/23 in major German courses; exploring language, corpus analysis, and AI-related methods.">德语专业课排名 12/23；持续学习语言、语料分析与 AI 相关方法。</p></div>
+  </div>
+</section>
+
+<section id="projects" class="page">
+  <div class="section-head"><div class="num">03</div><h1 data-zh="项目经历" data-en="Projects">项目经历</h1><p data-zh="从文本数据到用户需求，把 AI 与语言能力放进真实的项目流程。" data-en="From text data to user needs, applying AI and language skills to real project workflows.">从文本数据到用户需求，把 AI 与语言能力放进真实的项目流程。</p></div>
+  <div class="grid">
+    <article class="card project"><div class="tag">2025.11 — 2026.01 · COURSE PROJECT</div><h2>《Zootopia 2》评价分析</h2><p>基于 Python 文本情感分析与多维度评价挖掘。抓取并清洗 IMDb / Metacritic 海外英文影评，使用 NLTK 处理逾 4 万词级文本数据。</p><ul><li>使用 TextBlob 与 NRC 情感词典进行情感极性标注。</li><li>人工复核 100+ 条工具判定冲突数据，分析复杂语境、否定修饰与否定句中的偏差。</li><li>使用 TextRank 提取关键词，归纳剧情、动画、角色三大核心评价维度。</li></ul></article>
+    <article class="card project"><div class="tag">2025.10 — 至今 · UNIVERSITY PROJECT</div><h2>汉语全生命周期研究</h2><p>应对少子老龄化的汉语全生命周期研究，大创项目核心成员，主要负责数据标注。</p><ul><li>设计结构化 Prompt，引导生成式 AI 完成首轮预标注与数据分类。</li><li>人工抽检、纠偏并标记异常数据，保障标注质量。</li></ul></article>
+    <article class="card project"><div class="tag">2026.07 — 2026.12 · FIELD PROJECT</div><h2>扶摇 · 田野调查与朋辈支持行动</h2><p>面向素质教育欠发达地区准大学生的适应困境开展调研与支持。</p><ul><li>参与深度访谈与问卷，覆盖 150+ 位目标用户，整理 150+ 条原始需求反馈。</li><li>归纳学业规则、工具技能、生活规划等 5 大认知盲区。</li><li>协助开发线上课程、手册与 FAQ，跟进反馈形成“调研—培训—答疑—优化”闭环。</li></ul></article>
+  </div>
+</section>
+
+<section id="skills" class="page">
+  <div class="section-head"><div class="num">04</div><h1 data-zh="能力与兴趣" data-en="Skills & Interests">能力与兴趣</h1></div>
+  <div class="skills">
+    <div class="skill"><h3>语言能力</h3><p>德语专业学习；英语听说读写；英语四级 620；外研社杯英语演讲校一等奖；可流畅阅读与整理英语材料。</p></div>
+    <div class="skill"><h3>AI & Prompt</h3><p>熟悉 Gemini、ChatGPT、Claude 等 LLM 工具应用及 Prompt 撰写；理解大模型逻辑，并有 AI 辅助数据标注与质检经验。</p></div>
+    <div class="skill"><h3>Python & Data</h3><p>掌握 Python 基础、NLTK、TextBlob、NRC 情感词典、TextRank，并具备文本清洗、标注、质检与分析经验。</p></div>
+    <div class="skill"><h3>用户与运营</h3><p>熟悉飞书、Office；擅长用户需求提炼、结构化文档、使用手册、FAQ 与用户答疑跟进。</p></div>
+    <div class="skill"><h3>游戏兴趣</h3><p>Overcooked! 2 达成主线及 DLC 全四星通关，并持续探索民间自制 UGC 地图。</p></div>
+  </div>
+</section>
+
+<section id="contact" class="page">
+  <div class="contact"><div class="num">05</div><h1 data-zh="联系我" data-en="Contact">联系我</h1>
+  <p data-zh="如果你想了解我的项目、学习经历，或希望交流 AI、语言与用户运营相关的话题，可以通过邮件联系我。"
+     data-en="For project discussions, academic exchange, or conversations around AI, language, and user operations, feel free to reach out by email.">
+     如果你想了解我的项目、学习经历，或希望交流 AI、语言与用户运营相关的话题，可以通过邮件联系我。
+  </p>
+  <p><a href="mailto:1695294326@qq.com">1695294326@qq.com</a></p></div>
+</section>
+</main>
+
+<footer><span>© 2026 YINUO LIN</span><span data-zh="个人作品集" data-en="Personal Portfolio">个人作品集</span></footer>
+
+<script>
+function show(id){
+ document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+ [...document.querySelectorAll('nav button')].find(x=>x.getAttribute('onclick')?.includes(id))?.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function lang(l){
+ document.querySelectorAll('[data-zh][data-en]').forEach(x=>x.textContent=x.dataset[l]);
+ document.getElementById('zh').classList.toggle('active',l==='zh');
+ document.getElementById('en').classList.toggle('active',l==='en');
+ document.documentElement.lang=l==='zh'?'zh-CN':'en';
+}
+</script>
+</body>
+</html>
