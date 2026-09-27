@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101827">
+  <meta name="theme-color" content="#2b241f">
   <title>个人作品集</title>
   <style>
-    :root{--bg:#f4f5f8;--ink:#121a2a;--muted:#647087;--line:#dfe3eb;--paper:rgba(255,255,255,.76);--accent:#6255d9;--accent-soft:#e7e3ff;--shadow:0 20px 55px rgba(24,38,65,.10)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:radial-gradient(circle at 92% 0,#e0e5ff 0,transparent 28rem),radial-gradient(circle at 0 52%,#eee5ff 0,transparent 30rem),var(--bg);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.72}button{font:inherit}
-    header{position:fixed;inset:0 0 auto;z-index:20;height:74px;display:flex;align-items:center;gap:24px;padding:0 max(5vw,24px);background:rgba(244,245,248,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(27,42,70,.1)}.brand{margin-right:auto;font-size:13px;font-weight:800;letter-spacing:2.3px;text-transform:uppercase}nav{display:flex;gap:3px;overflow:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:none;border:0;border-radius:8px;background:transparent;color:var(--muted);padding:7px 10px;font-size:13px;cursor:pointer;transition:.2s}nav button:hover,nav button.active{background:#fff;color:var(--ink);box-shadow:0 3px 13px rgba(24,38,65,.07)}
-    main{padding-top:74px}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.57fr);align-items:center;gap:clamp(36px,8vw,130px);min-height:calc(100vh - 74px);padding:72px max(8vw,28px)}.eyebrow{margin:0 0 18px;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:2.7px}.hero h1{margin:0;font-size:clamp(64px,10vw,150px);line-height:.87;letter-spacing:-.085em}.hero .summary{max-width:660px;margin:27px 0 0;color:#556176;font-size:16px}.hero .email{display:inline-block;margin-top:24px;color:var(--ink);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}.portrait{position:relative;overflow:hidden;aspect-ratio:4/5;max-width:460px;width:100%;justify-self:end;border:1px solid rgba(255,255,255,.7);background:linear-gradient(150deg,#243450,#5e55a3 58%,#c38eb7);box-shadow:var(--shadow)}.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.19),transparent 42%);pointer-events:none}.portrait figure{width:100%;height:100%;margin:0}.portrait img{display:block;width:100%;height:100%;object-fit:cover;position:relative;z-index:1}.portrait.empty{display:grid;place-items:center;color:#fff;font-size:12px;letter-spacing:2px}.portrait.empty::before{content:"";position:absolute;width:68%;aspect-ratio:1;border-radius:50%;background:rgba(215,197,255,.28);right:-14%;top:-16%}
-    .module{padding:88px max(8vw,28px);scroll-margin-top:74px}.module:nth-of-type(even){background:rgba(255,255,255,.28)}.section-kicker{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:2.5px}.module h2{margin:8px 0 38px;font-size:clamp(40px,5vw,64px);letter-spacing:-.06em;line-height:1}.module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.content-card{padding:28px;border:1px solid rgba(255,255,255,.86);border-radius:15px;background:var(--paper);box-shadow:0 9px 30px rgba(26,39,67,.06);backdrop-filter:blur(10px)}.content-card p{margin:0;color:#556176;font-size:14px;white-space:pre-line}.content-card p+p{margin-top:14px}.content-card.image-text{grid-column:span 2;display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1fr);gap:26px;align-items:center}.content-card figure{margin:0;min-height:200px;border-radius:9px;overflow:hidden;background:#e9eaf1}.content-card img{display:block;width:100%;height:100%;max-height:440px;object-fit:cover}.content-card .image-missing{display:grid;place-items:center;min-height:180px;padding:20px;color:var(--muted);font-size:13px;text-align:center}.card-title{margin:0 0 12px;color:var(--ink);font-size:18px;line-height:1.35}.compact-card{border-top:1px solid var(--line);padding:20px 0}.compact-card:first-child{border-top:0;padding-top:0}.compact-card p{margin:0;color:#556176;white-space:pre-line;font-size:15px}.fallback{padding:100px 8vw;color:var(--muted);text-align:center}.fallback h1{color:var(--ink)}
-    footer{padding:26px max(8vw,28px);border-top:1px solid var(--line);color:#788196;font-size:12px}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    @media(max-width:760px){header{height:auto;min-height:64px;align-items:flex-start;flex-wrap:wrap;gap:6px;padding:12px 20px}.brand{padding-top:7px}nav{order:3;width:100%}main{padding-top:99px}.hero{grid-template-columns:1fr;padding:56px 7vw;min-height:auto}.hero h1{font-size:clamp(60px,18vw,98px)}.portrait{justify-self:start;max-width:390px}.module{padding:64px 7vw}.module-grid{grid-template-columns:1fr}.content-card.image-text{grid-column:span 1;grid-template-columns:1fr}.content-card{padding:22px}.content-card figure{max-height:350px}}
+    :root{--bg:#eee7da;--ink:#28221d;--muted:#675e55;--line:#bcae98;--paper:#faf5ea;--accent:#742e2c;--brass:#9a712e;--shadow:5px 6px 0 rgba(76,54,32,.11)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background-color:var(--bg);background-image:radial-gradient(rgba(84,61,38,.12) .55px,transparent .65px),linear-gradient(90deg,rgba(100,72,41,.035) 1px,transparent 1px);background-size:5px 5px,33px 33px;color:var(--ink);font-family:"Noto Serif SC","Songti SC","STSong","SimSun",serif;line-height:1.8}button{font:inherit}
+    header{position:fixed;inset:0 0 auto;z-index:20;height:72px;display:flex;align-items:center;gap:24px;padding:0 max(5vw,24px);background:rgba(250,245,234,.94);border-bottom:1px solid var(--ink);box-shadow:0 2px 0 rgba(154,113,46,.36)}.brand{margin-right:auto;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:13px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase}nav{display:flex;gap:3px;overflow:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:none;border:0;border-radius:0;background:transparent;color:var(--muted);padding:7px 10px;font-size:13px;cursor:pointer;transition:.18s}nav button:hover,nav button.active{color:var(--accent);text-decoration:underline;text-decoration-color:var(--brass);text-underline-offset:5px;text-decoration-thickness:1px}.language-switch{display:flex;align-items:center;border:1px solid var(--line);padding:2px}.language-switch button{border:0;background:transparent;color:var(--muted);padding:3px 7px;font-size:11px;cursor:pointer}.language-switch button.active{background:var(--accent);color:#fff8eb}
+    main{padding-top:72px}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.52fr);align-items:center;gap:clamp(40px,9vw,145px);min-height:calc(100vh - 72px);padding:80px max(8vw,28px);border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 18px;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:11px;font-weight:700;letter-spacing:3px}.hero h1{margin:0;font-size:clamp(64px,10vw,145px);font-weight:600;line-height:.92;letter-spacing:-.075em}.hero .summary{max-width:620px;margin:27px 0 0;color:var(--muted);font-size:16px}.hero .email{display:inline-block;margin-top:27px;color:var(--ink);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent)}.portrait{position:relative;aspect-ratio:3/4;max-width:440px;width:100%;justify-self:end;padding:13px;background:#2b241f;border:1px solid #171310;outline:1px solid var(--brass);outline-offset:5px;box-shadow:10px 12px 0 rgba(89,59,28,.18)}.portrait::after{content:"";position:absolute;inset:13px;background:linear-gradient(135deg,rgba(252,230,183,.16),transparent 48%);pointer-events:none}.portrait figure{width:100%;height:100%;margin:0}.portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:sepia(.17) contrast(1.04) saturate(.82)}.portrait.empty{display:grid;place-items:center;color:#f8f0df;font-size:12px;letter-spacing:2px}.portrait.empty::before{content:"";position:absolute;width:68%;aspect-ratio:1;border-radius:50%;background:rgba(196,150,75,.2);right:-14%;top:-16%}
+    .module{padding:92px max(8vw,28px);scroll-margin-top:72px}.module:nth-of-type(even){background:rgba(250,245,234,.45);border-top:1px solid rgba(188,174,152,.6);border-bottom:1px solid rgba(188,174,152,.6)}.section-kicker{display:inline-block;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:11px;font-weight:700;letter-spacing:2.5px;padding-bottom:4px;border-bottom:1px solid var(--brass)}.module h2{margin:12px 0 40px;font-size:clamp(42px,5vw,65px);font-weight:600;letter-spacing:-.055em;line-height:1}.module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.content-card{position:relative;padding:28px;border:1px solid var(--line);border-radius:0;background:var(--paper);box-shadow:var(--shadow)}.content-card::before{content:"";position:absolute;left:9px;top:9px;width:22px;border-top:1px solid rgba(154,113,46,.55)}.content-card p{margin:0;color:var(--muted);font-size:14px;white-space:pre-line}.content-card p+p{margin-top:14px}.content-card.image-text{grid-column:span 2;display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1fr);gap:28px;align-items:center}.content-card figure{margin:0;min-height:200px;border:1px solid var(--ink);padding:5px;overflow:hidden;background:#29231e}.content-card img{display:block;width:100%;height:100%;max-height:440px;object-fit:cover;filter:sepia(.12) saturate(.86)}.content-card .image-missing{display:grid;place-items:center;min-height:180px;padding:20px;color:var(--muted);font-size:13px;text-align:center}.fallback{padding:100px 8vw;color:var(--muted);text-align:center}.fallback h1{color:var(--ink)}
+    footer{padding:27px max(8vw,28px);border-top:1px solid #171310;background:#2b241f;color:#eadfc9;font-family:Georgia,"Times New Roman",serif;font-size:12px;letter-spacing:.7px}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:760px){header{height:auto;min-height:64px;align-items:flex-start;flex-wrap:wrap;gap:6px;padding:12px 20px}.brand{padding-top:7px}nav{order:3;width:100%}main{padding-top:99px}.hero{grid-template-columns:1fr;padding:56px 7vw;min-height:auto}.hero h1{font-size:clamp(60px,18vw,98px)}.portrait{justify-self:start;max-width:370px;padding:10px}.portrait::after{inset:10px}.module{padding:65px 7vw}.module-grid{grid-template-columns:1fr}.content-card.image-text{grid-column:span 1;grid-template-columns:1fr}.content-card{padding:22px}.content-card figure{max-height:350px}}
   </style>
 </head>
 <body>
-  <header><div class="brand" id="brand">PORTFOLIO</div><nav id="nav" aria-label="页面导航"></nav></header>
+  <header><div class="brand" id="brand">PORTFOLIO</div><nav id="nav" aria-label="页面导航"></nav><div class="language-switch" id="language-switch" aria-label="语言切换"></div></header>
   <main id="app" aria-live="polite"><div class="fallback"><h1>正在加载内容</h1><p>正在读取网站内容表格。</p></div></main>
   <footer>© <span id="year"></span> <span id="footer-name">Portfolio</span></footer>
 
@@ -26,6 +26,10 @@
     const IMAGE_PATTERN = /\.(avif|gif|jpe?g|png|svg|webp)$/i;
     const app = document.getElementById('app');
     const nav = document.getElementById('nav');
+    const languageSwitch = document.getElementById('language-switch');
+    const contentByLanguage = {};
+    let activeLanguage = 'zh';
+    let navObserver;
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const normalise = value => String(value ?? '').trim();
@@ -106,15 +110,16 @@
       if (email) { const link = document.createElement('a'); link.className = 'email'; link.href = `mailto:${email}`; link.textContent = email; copy.append(link); }
       const photo = basic?.items?.find(isImage);
       const portrait = document.createElement('div'); portrait.className = 'portrait';
-      if (photo) portrait.append(figure(photo));
+      if (photo) { const personalPhoto = figure(photo); personalPhoto.querySelector('img').alt = `${name} 的个人照片`; portrait.append(personalPhoto); }
       else { portrait.classList.add('empty'); portrait.textContent = 'IMAGE'; }
       section.append(copy, portrait); return section;
     }
 
-    function render(modules) {
+    function render(modules, language) {
       app.replaceChildren(); nav.replaceChildren();
       const basic = modules[0];
       const hero = makeHero(basic); app.append(hero);
+      document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
       document.title = `${basic?.items?.find(item => !isEmail(item) && !isImage(item)) || '个人作品集'} | Portfolio`;
       document.getElementById('brand').textContent = basic?.name || 'PORTFOLIO';
       document.getElementById('footer-name').textContent = basic?.items?.find(item => !isEmail(item) && !isImage(item)) || 'Portfolio';
@@ -125,8 +130,27 @@
         const button = document.createElement('button'); button.textContent = module.name; button.type = 'button';
         button.addEventListener('click', () => section.scrollIntoView({ behavior:'smooth', block:'start' })); nav.append(button);
       });
-      const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { const active = sections.indexOf(entry.target); [...nav.children].forEach((button, index) => button.classList.toggle('active', index === active)); } }), { rootMargin:'-42% 0px -48% 0px' });
-      sections.forEach(section => observer.observe(section));
+      if (navObserver) navObserver.disconnect();
+      navObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { const active = sections.indexOf(entry.target); [...nav.children].forEach((button, index) => button.classList.toggle('active', index === active)); } }), { rootMargin:'-42% 0px -48% 0px' });
+      sections.forEach(section => navObserver.observe(section));
+    }
+
+    function renderLanguageSwitch() {
+      languageSwitch.replaceChildren();
+      [['zh','中'], ['en','EN']].filter(([language]) => contentByLanguage[language]).forEach(([language, label]) => {
+        const button = document.createElement('button'); button.type = 'button'; button.textContent = label;
+        button.classList.toggle('active', language === activeLanguage);
+        button.setAttribute('aria-label', language === 'zh' ? '切换至中文' : 'Switch to English');
+        button.addEventListener('click', () => setLanguage(language)); languageSwitch.append(button);
+      });
+    }
+
+    function setLanguage(language) {
+      if (!contentByLanguage[language]) return;
+      activeLanguage = language;
+      localStorage.setItem('portfolio-language', language);
+      renderLanguageSwitch();
+      render(contentByLanguage[language], language);
     }
 
     async function loadWorkbook() {
@@ -136,12 +160,20 @@
         if (!response.ok) throw new Error(`无法读取 ${WORKBOOK_FILE}`);
         const data = await response.arrayBuffer();
         const workbook = XLSX.read(data, { type:'array' });
-        const sheet = workbook.Sheets[workbook.SheetNames[0]];
-        const rows = XLSX.utils.sheet_to_json(sheet, { header:1, defval:'', blankrows:false });
-        const headers = rows[0] || [];
-        const modules = headers.map((header, column) => ({ name:normalise(header), items:rows.slice(1).map(row => normalise(row[column])).filter(Boolean) })).filter(module => module.name);
-        if (!modules.length) throw new Error('表格第一行没有可用的模块名称');
-        render(modules);
+        const modulesFromSheet = sheetName => {
+          const sheet = workbook.Sheets[sheetName];
+          const rows = XLSX.utils.sheet_to_json(sheet, { header:1, defval:'', blankrows:false });
+          const headers = rows[0] || [];
+          return headers.map((header, column) => ({ name:normalise(header), items:rows.slice(1).map(row => normalise(row[column])).filter(Boolean) })).filter(module => module.name);
+        };
+        contentByLanguage.zh = modulesFromSheet(workbook.SheetNames[0]);
+        const englishSheet = workbook.SheetNames.find(name => name.toLowerCase() === 'english');
+        if (englishSheet) contentByLanguage.en = modulesFromSheet(englishSheet);
+        if (!contentByLanguage.zh.length) throw new Error('表格第一行没有可用的模块名称');
+        const savedLanguage = localStorage.getItem('portfolio-language');
+        activeLanguage = contentByLanguage[savedLanguage] ? savedLanguage : 'zh';
+        renderLanguageSwitch();
+        render(contentByLanguage[activeLanguage], activeLanguage);
       } catch (error) {
         app.replaceChildren(); const fallback = document.createElement('div'); fallback.className = 'fallback';
         const title = document.createElement('h1'); title.textContent = '内容未能加载';
