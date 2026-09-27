@@ -3,72 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10192a">
-  <title>林一诺 | Portfolio</title>
+  <meta name="theme-color" content="#101827">
+  <title>个人作品集</title>
   <style>
-    :root{--bg:#eef1f6;--surface:rgba(255,255,255,.7);--surface-solid:#fff;--ink:#172033;--muted:#667087;--line:rgba(28,43,69,.12);--accent:#5d57e8;--accent-2:#b971e8;--shadow:0 20px 55px rgba(29,43,72,.1)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 88% 0,#d8defe 0,transparent 28rem),radial-gradient(circle at 0 46%,#e7dafa 0,transparent 31rem),var(--bg);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.7}
-    header{position:fixed;inset:0 0 auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:rgba(238,241,246,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);z-index:10}.logo{font-weight:800;letter-spacing:2.4px;font-size:14px}nav{display:flex;gap:4px}button{font:inherit}nav button,.lang button{border:0;background:none;cursor:pointer;color:var(--muted);font-size:13px;transition:.2s ease}nav button{padding:8px 10px;border-radius:9px}nav button.active,nav button:hover{background:rgba(255,255,255,.72);color:var(--ink);font-weight:700}.lang{display:flex;align-items:center;gap:6px;font-size:12px;color:#a0a7b5}.lang button{padding:5px 7px;border-radius:6px}.lang button.active{color:#fff;background:var(--ink);font-weight:700}
-    main{padding-top:74px}.page{display:none;min-height:calc(100vh - 74px);padding:88px 8vw}.page.active{display:block;animation:enter .5s ease both}@keyframes enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    .hero{min-height:calc(100vh - 74px);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:8vw}.eyebrow,.num{font-size:11px;letter-spacing:2.8px;color:var(--muted);font-weight:700}.hero h1{font-size:clamp(68px,10vw,148px);line-height:.88;letter-spacing:-.085em;margin:20px 0 28px}.hero h2{font-size:20px;font-weight:500;margin:0 0 22px}.hero p{max-width:640px;color:#586277;font-size:16px}.portrait{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.65);border-radius:2px;background:linear-gradient(145deg,#1b2843,#4d4b8c 58%,#d69ec5);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.78);letter-spacing:2px;font-size:11px}.portrait:before,.portrait:after{content:"";position:absolute;border-radius:50%;filter:blur(1px)}.portrait:before{width:70%;aspect-ratio:1;background:rgba(176,208,255,.32);top:-17%;right:-14%}.portrait:after{width:62%;aspect-ratio:1;background:rgba(238,154,213,.25);left:-19%;bottom:-18%}.portrait span{position:relative;z-index:1}
-    .section-head{margin-bottom:52px}.section-head h1{font-size:clamp(43px,5vw,62px);line-height:1;letter-spacing:-.055em;margin:10px 0 14px}.section-head p{max-width:700px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card{background:var(--surface);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.76);box-shadow:0 10px 34px rgba(30,43,68,.06);padding:30px;border-radius:14px;transition:transform .25s ease,box-shadow .25s ease}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.card h2{margin:0 0 10px;font-size:24px;line-height:1.3}.card p,.card li{color:#5d667a;font-size:14px}.card ul{padding-left:20px;margin-bottom:0}.card li+li{margin-top:6px}
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:80px}.about p{font-size:17px;color:#566176}.facts{border-top:1px solid var(--line)}.fact{display:grid;grid-template-columns:120px 1fr;padding:17px 0;border-bottom:1px solid var(--line)}.fact span:first-child{color:#8a93a5;font-size:13px}.timeline{border-left:1px solid #b9c1d0}.item{position:relative;padding:0 0 45px 42px}.item:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 5px rgba(93,87,232,.1)}.date,.tag{font-size:11px;color:#858ea1;letter-spacing:1.4px;font-weight:700}.item h2{margin:7px 0;font-size:25px}.item p{color:#606a7d;margin:6px 0;font-size:14px}
-    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 42px}.skill{border-top:1px solid var(--line);padding:21px 0}.skill h3{margin:0 0 7px;font-size:17px}.skill p{margin:0;color:#606a7d;font-size:14px}.contact{min-height:65vh;display:flex;flex-direction:column;justify-content:center}.contact h1{font-size:clamp(60px,9vw,120px);line-height:.9;letter-spacing:-.07em;margin:12px 0 32px}.contact p{max-width:650px;color:#606a7d}.contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid currentColor;font-weight:700}footer{padding:26px 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#858ea1;font-size:12px}
-    @media(max-width:800px){header{height:auto;padding:14px 5vw;flex-wrap:wrap;gap:10px}nav{order:3;width:100%;overflow:auto;gap:2px}nav button{white-space:nowrap;padding:6px 8px}.page{padding:58px 6vw}.hero,.about,.grid{grid-template-columns:1fr;gap:38px}.hero{min-height:auto;padding-top:38px}.hero h1{font-size:76px}.portrait{max-width:420px}.skills{grid-template-columns:1fr}.section-head h1{font-size:43px}footer{flex-direction:column;gap:7px}}
+    :root{--bg:#f4f5f8;--ink:#121a2a;--muted:#647087;--line:#dfe3eb;--paper:rgba(255,255,255,.76);--accent:#6255d9;--accent-soft:#e7e3ff;--shadow:0 20px 55px rgba(24,38,65,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:radial-gradient(circle at 92% 0,#e0e5ff 0,transparent 28rem),radial-gradient(circle at 0 52%,#eee5ff 0,transparent 30rem),var(--bg);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.72}button{font:inherit}
+    header{position:fixed;inset:0 0 auto;z-index:20;height:74px;display:flex;align-items:center;gap:24px;padding:0 max(5vw,24px);background:rgba(244,245,248,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(27,42,70,.1)}.brand{margin-right:auto;font-size:13px;font-weight:800;letter-spacing:2.3px;text-transform:uppercase}nav{display:flex;gap:3px;overflow:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:none;border:0;border-radius:8px;background:transparent;color:var(--muted);padding:7px 10px;font-size:13px;cursor:pointer;transition:.2s}nav button:hover,nav button.active{background:#fff;color:var(--ink);box-shadow:0 3px 13px rgba(24,38,65,.07)}
+    main{padding-top:74px}.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.57fr);align-items:center;gap:clamp(36px,8vw,130px);min-height:calc(100vh - 74px);padding:72px max(8vw,28px)}.eyebrow{margin:0 0 18px;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:2.7px}.hero h1{margin:0;font-size:clamp(64px,10vw,150px);line-height:.87;letter-spacing:-.085em}.hero .summary{max-width:660px;margin:27px 0 0;color:#556176;font-size:16px}.hero .email{display:inline-block;margin-top:24px;color:var(--ink);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}.portrait{position:relative;overflow:hidden;aspect-ratio:4/5;max-width:460px;width:100%;justify-self:end;border:1px solid rgba(255,255,255,.7);background:linear-gradient(150deg,#243450,#5e55a3 58%,#c38eb7);box-shadow:var(--shadow)}.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.19),transparent 42%);pointer-events:none}.portrait figure{width:100%;height:100%;margin:0}.portrait img{display:block;width:100%;height:100%;object-fit:cover;position:relative;z-index:1}.portrait.empty{display:grid;place-items:center;color:#fff;font-size:12px;letter-spacing:2px}.portrait.empty::before{content:"";position:absolute;width:68%;aspect-ratio:1;border-radius:50%;background:rgba(215,197,255,.28);right:-14%;top:-16%}
+    .module{padding:88px max(8vw,28px);scroll-margin-top:74px}.module:nth-of-type(even){background:rgba(255,255,255,.28)}.section-kicker{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:2.5px}.module h2{margin:8px 0 38px;font-size:clamp(40px,5vw,64px);letter-spacing:-.06em;line-height:1}.module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.content-card{padding:28px;border:1px solid rgba(255,255,255,.86);border-radius:15px;background:var(--paper);box-shadow:0 9px 30px rgba(26,39,67,.06);backdrop-filter:blur(10px)}.content-card p{margin:0;color:#556176;font-size:14px;white-space:pre-line}.content-card p+p{margin-top:14px}.content-card.image-text{grid-column:span 2;display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1fr);gap:26px;align-items:center}.content-card figure{margin:0;min-height:200px;border-radius:9px;overflow:hidden;background:#e9eaf1}.content-card img{display:block;width:100%;height:100%;max-height:440px;object-fit:cover}.content-card .image-missing{display:grid;place-items:center;min-height:180px;padding:20px;color:var(--muted);font-size:13px;text-align:center}.card-title{margin:0 0 12px;color:var(--ink);font-size:18px;line-height:1.35}.compact-card{border-top:1px solid var(--line);padding:20px 0}.compact-card:first-child{border-top:0;padding-top:0}.compact-card p{margin:0;color:#556176;white-space:pre-line;font-size:15px}.fallback{padding:100px 8vw;color:var(--muted);text-align:center}.fallback h1{color:var(--ink)}
+    footer{padding:26px max(8vw,28px);border-top:1px solid var(--line);color:#788196;font-size:12px}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:760px){header{height:auto;min-height:64px;align-items:flex-start;flex-wrap:wrap;gap:6px;padding:12px 20px}.brand{padding-top:7px}nav{order:3;width:100%}main{padding-top:99px}.hero{grid-template-columns:1fr;padding:56px 7vw;min-height:auto}.hero h1{font-size:clamp(60px,18vw,98px)}.portrait{justify-self:start;max-width:390px}.module{padding:64px 7vw}.module-grid{grid-template-columns:1fr}.content-card.image-text{grid-column:span 1;grid-template-columns:1fr}.content-card{padding:22px}.content-card figure{max-height:350px}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">YINUO LIN</div>
-    <nav aria-label="Primary navigation">
-      <button class="active" onclick="show('home',this)" data-i18n="navHome">首页</button>
-      <button onclick="show('about',this)" data-i18n="navAbout">关于我</button>
-      <button onclick="show('education',this)" data-i18n="navEducation">教育经历</button>
-      <button onclick="show('projects',this)" data-i18n="navProjects">项目经历</button>
-      <button onclick="show('skills',this)" data-i18n="navSkills">能力</button>
-      <button onclick="show('contact',this)" data-i18n="navContact">联系我</button>
-    </nav>
-    <div class="lang" aria-label="Language"><button class="active" onclick="setLanguage('zh')" id="zh">中</button><span>/</span><button onclick="setLanguage('en')" id="en">EN</button></div>
-  </header>
+  <header><div class="brand" id="brand">PORTFOLIO</div><nav id="nav" aria-label="页面导航"></nav></header>
+  <main id="app" aria-live="polite"><div class="fallback"><h1>正在加载内容</h1><p>正在读取网站内容表格。</p></div></main>
+  <footer>© <span id="year"></span> <span id="footer-name">Portfolio</span></footer>
 
-  <main>
-    <section id="home" class="page active">
-      <div class="hero"><div>
-        <div class="eyebrow" data-i18n="eyebrow">PERSONAL PORTFOLIO · 2026</div><h1>林一诺</h1>
-        <h2 data-i18n="heroTitle">上海交通大学 · 德语 · 本科</h2><p data-i18n="heroText">一名关注语言、人工智能与用户需求的德语专业学生。拥有英德双语能力，正在探索如何把语言能力、数据分析与生成式 AI 应用结合到真实项目中。</p>
-      </div><div class="portrait"><span data-i18n="portrait">PORTRAIT / IMAGE</span></div></div>
-    </section>
-
-    <section id="about" class="page"><div class="section-head"><div class="num">01</div><h1 data-i18n="aboutHeading">关于我</h1><p data-i18n="aboutLead">从语言学习出发，持续向 AI、数据与用户研究延伸。</p></div>
-      <div class="about"><div><p data-i18n="aboutText">我就读于上海交通大学德语专业，具备英语与德语语言能力，并持续关注人工智能工具在语言学习、数据标注、内容处理和用户运营中的实际应用。我的项目经历覆盖文本情感分析、生成式 AI 辅助数据标注、用户访谈与需求分析，以及课程与 FAQ 的设计。</p></div>
-        <div class="facts"><div class="fact"><span data-i18n="factName">姓名</span><span data-i18n="name">林一诺</span></div><div class="fact"><span data-i18n="factSchool">学校</span><span data-i18n="school">上海交通大学</span></div><div class="fact"><span data-i18n="factMajor">专业</span><span data-i18n="major">德语</span></div><div class="fact"><span data-i18n="factDegree">学历</span><span data-i18n="degree">本科</span></div><div class="fact"><span data-i18n="factPeriod">在读时间</span><span>2025.09 — 2029.06</span></div></div>
-      </div>
-    </section>
-
-    <section id="education" class="page"><div class="section-head"><div class="num">02</div><h1 data-i18n="educationHeading">教育经历</h1></div><div class="timeline"><div class="item"><div class="date">2025.09 — 2029.06</div><h2 data-i18n="school">上海交通大学</h2><p data-i18n="heroTitle">上海交通大学 · 德语 · 本科</p><p data-i18n="educationText">持续学习语言、语料分析与 AI 相关方法。</p></div></div></section>
-
-    <section id="projects" class="page"><div class="section-head"><div class="num">03</div><h1 data-i18n="projectsHeading">项目经历</h1><p data-i18n="projectsLead">从文本数据到用户需求，把 AI 与语言能力放进真实的项目流程。</p></div><div class="grid">
-      <article class="card project"><div class="tag">2025.11 — 2026.01 · <span data-i18n="courseProject">课程项目</span></div><h2 data-i18n="p1Title">《Zootopia 2》评价分析</h2><p data-i18n="p1Text">基于 Python 文本情感分析与多维度评价挖掘。抓取并清洗 IMDb / Metacritic 海外英文影评，使用 NLTK 处理逾 4 万词级文本数据。</p><ul><li data-i18n="p1a">使用 TextBlob 与 NRC 情感词典进行情感极性标注。</li><li data-i18n="p1b">人工复核 100+ 条工具判定冲突数据，分析复杂语境、否定修饰与否定句中的偏差。</li><li data-i18n="p1c">使用 TextRank 提取关键词，归纳剧情、动画、角色三大核心评价维度。</li></ul></article>
-      <article class="card project"><div class="tag">2025.10 — <span data-i18n="present">至今</span> · <span data-i18n="universityProject">大学项目</span></div><h2 data-i18n="p2Title">汉语全生命周期研究</h2><p data-i18n="p2Text">应对少子老龄化的汉语全生命周期研究，大创项目核心成员，主要负责数据标注。</p><ul><li data-i18n="p2a">设计结构化 Prompt，引导生成式 AI 完成首轮预标注与数据分类。</li><li data-i18n="p2b">人工抽检、纠偏并标记异常数据，保障标注质量。</li></ul></article>
-      <article class="card project"><div class="tag">2026.07 — 2026.12 · <span data-i18n="fieldProject">田野项目</span></div><h2 data-i18n="p3Title">扶摇 · 田野调查与朋辈支持行动</h2><p data-i18n="p3Text">面向素质教育欠发达地区准大学生的适应困境开展调研与支持。</p><ul><li data-i18n="p3a">参与深度访谈与问卷，覆盖 150+ 位目标用户，整理 150+ 条原始需求反馈。</li><li data-i18n="p3b">归纳学业规则、工具技能、生活规划等 5 大认知盲区。</li><li data-i18n="p3c">协助开发线上课程、手册与 FAQ，跟进反馈形成“调研—培训—答疑—优化”闭环。</li></ul></article>
-    </div></section>
-
-    <section id="skills" class="page"><div class="section-head"><div class="num">04</div><h1 data-i18n="skillsHeading">能力与兴趣</h1></div><div class="skills">
-      <div class="skill"><h3 data-i18n="s1Title">语言能力</h3><p data-i18n="s1Text">德语专业学习；英语听说读写；英语四级 620；外研社杯英语演讲校一等奖；可流畅阅读与整理英语材料。</p></div>
-      <div class="skill"><h3>AI & Prompt</h3><p data-i18n="s2Text">熟悉 Gemini、ChatGPT、Claude 等 LLM 工具应用及 Prompt 撰写；理解大模型逻辑，并有 AI 辅助数据标注与质检经验。</p></div>
-      <div class="skill"><h3>Python & Data</h3><p data-i18n="s3Text">掌握 Python 基础、NLTK、TextBlob、NRC 情感词典、TextRank，并具备文本清洗、标注、质检与分析经验。</p></div>
-      <div class="skill"><h3 data-i18n="s4Title">用户与运营</h3><p data-i18n="s4Text">熟悉飞书、Office；擅长用户需求提炼、结构化文档、使用手册、FAQ 与用户答疑跟进。</p></div>
-      <div class="skill"><h3 data-i18n="s5Title">游戏兴趣</h3><p data-i18n="s5Text">Overcooked! 2 达成主线及 DLC 全四星通关，并持续探索民间自制 UGC 地图。</p></div>
-    </div></section>
-
-    <section id="contact" class="page"><div class="contact"><div class="num">05</div><h1 data-i18n="contactHeading">联系我</h1><p data-i18n="contactText">如果你想了解我的项目、学习经历，或希望交流 AI、语言与用户运营相关的话题，可以通过邮件联系我。</p><p><a href="mailto:1695294326@qq.com">1695294326@qq.com</a></p></div></section>
-  </main>
-  <footer><span>© 2026 YINUO LIN</span><span data-i18n="footer">个人作品集</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script>
-    const copy={zh:{title:'林一诺 | Portfolio',navHome:'首页',navAbout:'关于我',navEducation:'教育经历',navProjects:'项目经历',navSkills:'能力',navContact:'联系我',eyebrow:'个人作品集 · 2026',heroTitle:'上海交通大学 · 德语 · 本科',heroText:'一名关注语言、人工智能与用户需求的德语专业学生。拥有英德双语能力，正在探索如何把语言能力、数据分析与生成式 AI 应用结合到真实项目中。',portrait:'PORTRAIT / IMAGE',aboutHeading:'关于我',aboutLead:'从语言学习出发，持续向 AI、数据与用户研究延伸。',aboutText:'我就读于上海交通大学德语专业，具备英语与德语语言能力，并持续关注人工智能工具在语言学习、数据标注、内容处理和用户运营中的实际应用。我的项目经历覆盖文本情感分析、生成式 AI 辅助数据标注、用户访谈与需求分析，以及课程与 FAQ 的设计。',factName:'姓名',name:'林一诺',factSchool:'学校',school:'上海交通大学',factMajor:'专业',major:'德语',factDegree:'学历',degree:'本科',factPeriod:'在读时间',educationHeading:'教育经历',educationText:'持续学习语言、语料分析与 AI 相关方法。',projectsHeading:'项目经历',projectsLead:'从文本数据到用户需求，把 AI 与语言能力放进真实的项目流程。',courseProject:'课程项目',present:'至今',universityProject:'大学项目',fieldProject:'田野项目',p1Title:'《Zootopia 2》评价分析',p1Text:'基于 Python 文本情感分析与多维度评价挖掘。抓取并清洗 IMDb / Metacritic 海外英文影评，使用 NLTK 处理逾 4 万词级文本数据。',p1a:'使用 TextBlob 与 NRC 情感词典进行情感极性标注。',p1b:'人工复核 100+ 条工具判定冲突数据，分析复杂语境、否定修饰与否定句中的偏差。',p1c:'使用 TextRank 提取关键词，归纳剧情、动画、角色三大核心评价维度。',p2Title:'汉语全生命周期研究',p2Text:'应对少子老龄化的汉语全生命周期研究，大创项目核心成员，主要负责数据标注。',p2a:'设计结构化 Prompt，引导生成式 AI 完成首轮预标注与数据分类。',p2b:'人工抽检、纠偏并标记异常数据，保障标注质量。',p3Title:'扶摇 · 田野调查与朋辈支持行动',p3Text:'面向素质教育欠发达地区准大学生的适应困境开展调研与支持。',p3a:'参与深度访谈与问卷，覆盖 150+ 位目标用户，整理 150+ 条原始需求反馈。',p3b:'归纳学业规则、工具技能、生活规划等 5 大认知盲区。',p3c:'协助开发线上课程、手册与 FAQ，跟进反馈形成“调研—培训—答疑—优化”闭环。',skillsHeading:'能力与兴趣',s1Title:'语言能力',s1Text:'德语专业学习；英语听说读写；英语四级 620；外研社杯英语演讲校一等奖；可流畅阅读与整理英语材料。',s2Text:'熟悉 Gemini、ChatGPT、Claude 等 LLM 工具应用及 Prompt 撰写；理解大模型逻辑，并有 AI 辅助数据标注与质检经验。',s3Text:'掌握 Python 基础、NLTK、TextBlob、NRC 情感词典、TextRank，并具备文本清洗、标注、质检与分析经验。',s4Title:'用户与运营',s4Text:'熟悉飞书、Office；擅长用户需求提炼、结构化文档、使用手册、FAQ 与用户答疑跟进。',s5Title:'游戏兴趣',s5Text:'Overcooked! 2 达成主线及 DLC 全四星通关，并持续探索民间自制 UGC 地图。',contactHeading:'联系我',contactText:'如果你想了解我的项目、学习经历，或希望交流 AI、语言与用户运营相关的话题，可以通过邮件联系我。',footer:'个人作品集'},en:{title:'Yinuo Lin | Portfolio',navHome:'Home',navAbout:'About',navEducation:'Education',navProjects:'Projects',navSkills:'Skills',navContact:'Contact',eyebrow:'PERSONAL PORTFOLIO · 2026',heroTitle:'German Studies · Shanghai Jiao Tong University',heroText:'A German Studies undergraduate interested in language, AI, and user needs. I explore how bilingual communication, data analysis, and generative AI can work together in real-world projects.',portrait:'PORTRAIT / IMAGE',aboutHeading:'About Me',aboutLead:'Starting with language studies, I continue to explore AI, data, and user research.',aboutText:'I study German at Shanghai Jiao Tong University, with English and German language skills and a strong interest in practical AI applications for language learning, data annotation, content processing, and user operations. My projects include sentiment analysis, generative-AI-assisted annotation, user interviews, needs analysis, and educational content design.',factName:'Name',name:'Yinuo Lin',factSchool:'University',school:'Shanghai Jiao Tong University',factMajor:'Major',major:'German Studies',factDegree:'Degree',degree:'Undergraduate',factPeriod:'Period',educationHeading:'Education',educationText:'Continuing to study language, corpus analysis, and AI-related methods.',projectsHeading:'Projects',projectsLead:'Bringing AI and language skills into real project workflows, from text data to user needs.',courseProject:'COURSE PROJECT',present:'PRESENT',universityProject:'UNIVERSITY PROJECT',fieldProject:'FIELD PROJECT',p1Title:'Zootopia 2 Review Analysis',p1Text:'A Python-based sentiment analysis and multidimensional review-mining project. Collected and cleaned English-language reviews from IMDb and Metacritic, processing more than 40,000 words with NLTK.',p1a:'Used TextBlob and the NRC Emotion Lexicon for sentiment-polarity annotation.',p1b:'Manually reviewed 100+ records with conflicting automated results, examining complex context, negation, and modifiers.',p1c:'Used TextRank to extract keywords and identify three core dimensions: plot, animation, and characters.',p2Title:'Chinese Language Across the Life Course',p2Text:'A university innovation project on Chinese language use across the life course in response to population ageing and declining birth rates. Core team member responsible for data annotation.',p2a:'Designed structured prompts to guide generative AI through initial pre-annotation and data classification.',p2b:'Conducted manual sampling, corrections, and anomaly flagging to safeguard annotation quality.',p3Title:'Fuyiao · Field Research & Peer Support',p3Text:'Research and support for prospective university students in areas with limited access to quality education.',p3a:'Conducted interviews and surveys covering 150+ target users, organizing 150+ pieces of raw feedback.',p3b:'Identified five major knowledge gaps, including academic rules, practical tools, and life planning.',p3c:'Helped develop online courses, guides, and FAQs, supporting a closed loop of research, training, Q&A, and iteration.',skillsHeading:'Skills & Interests',s1Title:'Languages',s1Text:'German Studies; strong English listening, speaking, reading, and writing; CET-4 score: 620; first prize in the university round of the FLTRP English Public Speaking Contest; able to read and synthesize English materials fluently.',s2Text:'Experienced with Gemini, ChatGPT, Claude, and other LLM tools and prompt writing; familiar with LLM principles and AI-assisted data annotation and quality control.',s3Text:'Working knowledge of Python, NLTK, TextBlob, the NRC Emotion Lexicon, and TextRank, with experience in text cleaning, annotation, quality control, and analysis.',s4Title:'User Research & Operations',s4Text:'Proficient with Feishu and Microsoft Office; skilled at synthesizing user needs, producing structured documents, user guides, FAQs, and follow-up support.',s5Title:'Gaming',s5Text:'Completed the main game and all DLCs of Overcooked! 2 with four stars, and continue to explore community-made UGC maps.',contactHeading:'Let’s Connect',contactText:'For project discussions, academic exchange, or conversations around AI, language, and user operations, feel free to reach out by email.',footer:'Personal Portfolio'}};
-    function show(id,button){document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(item=>item.classList.remove('active'));button.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-    function setLanguage(language){document.querySelectorAll('[data-i18n]').forEach(element=>{const value=copy[language][element.dataset.i18n];if(value) element.textContent=value;});document.getElementById('zh').classList.toggle('active',language==='zh');document.getElementById('en').classList.toggle('active',language==='en');document.documentElement.lang=language==='zh'?'zh-CN':'en';document.title=copy[language].title;localStorage.setItem('portfolio-language',language);}
-    setLanguage(localStorage.getItem('portfolio-language')||'zh');
+    const WORKBOOK_FILE = '网站内容.xlsx';
+    const IMAGE_PATTERN = /\.(avif|gif|jpe?g|png|svg|webp)$/i;
+    const app = document.getElementById('app');
+    const nav = document.getElementById('nav');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const normalise = value => String(value ?? '').trim();
+    const isImage = value => IMAGE_PATTERN.test(normalise(value));
+    const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalise(value));
+    const safeImagePath = name => encodeURI(normalise(name).replace(/\\/g, '/'));
+
+    function textBlock(value) {
+      const text = normalise(value);
+      const wrapper = document.createElement('div');
+      text.split(/\n\s*\n/).forEach(part => { if (part.trim()) { const p = document.createElement('p'); p.textContent = part.trim(); wrapper.append(p); } });
+      return wrapper;
+    }
+
+    function figure(imageName) {
+      const frame = document.createElement('figure');
+      const image = new Image();
+      image.src = safeImagePath(imageName);
+      image.alt = imageName.replace(/\.[^.]+$/, '');
+      image.loading = 'lazy';
+      image.onerror = () => { frame.replaceChildren(Object.assign(document.createElement('div'), { className:'image-missing', textContent:`找不到图片：${imageName}` })); };
+      frame.append(image);
+      return frame;
+    }
+
+    function makeCard(value) {
+      const card = document.createElement('article');
+      card.className = 'content-card';
+      card.append(textBlock(value));
+      return card;
+    }
+
+    function makeModule(module, index) {
+      const section = document.createElement('section');
+      section.className = 'module';
+      section.id = `module-${index + 1}`;
+      const kicker = document.createElement('div');
+      kicker.className = 'section-kicker';
+      kicker.textContent = String(index + 1).padStart(2, '0');
+      const heading = document.createElement('h2');
+      heading.textContent = module.name;
+      const grid = document.createElement('div');
+      grid.className = 'module-grid';
+      for (let i = 0; i < module.items.length; i += 1) {
+        const current = module.items[i];
+        const next = module.items[i + 1];
+        if (isImage(current) && next && !isImage(next)) {
+          const card = document.createElement('article');
+          card.className = 'content-card image-text';
+          card.append(figure(current), textBlock(next));
+          grid.append(card); i += 1;
+        } else if (!isImage(current) && isImage(next)) {
+          const card = document.createElement('article');
+          card.className = 'content-card image-text';
+          card.append(figure(next), textBlock(current));
+          grid.append(card); i += 1;
+        } else if (isImage(current)) {
+          const card = document.createElement('article');
+          card.className = 'content-card'; card.append(figure(current)); grid.append(card);
+        } else grid.append(makeCard(current));
+      }
+      section.append(kicker, heading, grid);
+      return section;
+    }
+
+    function makeHero(basic) {
+      const section = document.createElement('section');
+      section.className = 'hero'; section.id = 'top';
+      const words = basic?.items?.filter(item => !isImage(item)) || [];
+      const name = words.find(item => !isEmail(item)) || basic?.name || '个人作品集';
+      const email = words.find(isEmail);
+      const rest = words.filter(item => item !== name && item !== email);
+      const copy = document.createElement('div');
+      const eyebrow = document.createElement('p'); eyebrow.className = 'eyebrow'; eyebrow.textContent = basic?.name || '个人作品集';
+      const title = document.createElement('h1'); title.textContent = name;
+      copy.append(eyebrow, title);
+      if (rest.length) { const summary = document.createElement('div'); summary.className = 'summary'; rest.forEach(item => summary.append(textBlock(item))); copy.append(summary); }
+      if (email) { const link = document.createElement('a'); link.className = 'email'; link.href = `mailto:${email}`; link.textContent = email; copy.append(link); }
+      const photo = basic?.items?.find(isImage);
+      const portrait = document.createElement('div'); portrait.className = 'portrait';
+      if (photo) portrait.append(figure(photo));
+      else { portrait.classList.add('empty'); portrait.textContent = 'IMAGE'; }
+      section.append(copy, portrait); return section;
+    }
+
+    function render(modules) {
+      app.replaceChildren(); nav.replaceChildren();
+      const basic = modules[0];
+      const hero = makeHero(basic); app.append(hero);
+      document.title = `${basic?.items?.find(item => !isEmail(item) && !isImage(item)) || '个人作品集'} | Portfolio`;
+      document.getElementById('brand').textContent = basic?.name || 'PORTFOLIO';
+      document.getElementById('footer-name').textContent = basic?.items?.find(item => !isEmail(item) && !isImage(item)) || 'Portfolio';
+      const sections = [hero];
+      modules.forEach((module, index) => {
+        const section = index === 0 ? hero : makeModule(module, index);
+        if (index > 0) { app.append(section); sections.push(section); }
+        const button = document.createElement('button'); button.textContent = module.name; button.type = 'button';
+        button.addEventListener('click', () => section.scrollIntoView({ behavior:'smooth', block:'start' })); nav.append(button);
+      });
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { const active = sections.indexOf(entry.target); [...nav.children].forEach((button, index) => button.classList.toggle('active', index === active)); } }), { rootMargin:'-42% 0px -48% 0px' });
+      sections.forEach(section => observer.observe(section));
+    }
+
+    async function loadWorkbook() {
+      try {
+        if (!window.XLSX) throw new Error('表格读取组件未加载');
+        const response = await fetch(encodeURI(WORKBOOK_FILE), { cache:'no-store' });
+        if (!response.ok) throw new Error(`无法读取 ${WORKBOOK_FILE}`);
+        const data = await response.arrayBuffer();
+        const workbook = XLSX.read(data, { type:'array' });
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(sheet, { header:1, defval:'', blankrows:false });
+        const headers = rows[0] || [];
+        const modules = headers.map((header, column) => ({ name:normalise(header), items:rows.slice(1).map(row => normalise(row[column])).filter(Boolean) })).filter(module => module.name);
+        if (!modules.length) throw new Error('表格第一行没有可用的模块名称');
+        render(modules);
+      } catch (error) {
+        app.replaceChildren(); const fallback = document.createElement('div'); fallback.className = 'fallback';
+        const title = document.createElement('h1'); title.textContent = '内容未能加载';
+        const message = document.createElement('p'); message.textContent = `${error.message}。请确认“${WORKBOOK_FILE}”和 index.html 位于同一目录。`;
+        fallback.append(title, message); app.append(fallback); console.error(error);
+      }
+    }
+    loadWorkbook();
   </script>
 </body>
 </html>
